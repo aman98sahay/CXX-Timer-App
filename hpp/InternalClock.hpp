@@ -6,10 +6,10 @@ class InternalClock {
 public :
 	
 				
-	InternalClock(Timer& obj) : mainTimer(obj) {}
+	InternalClock(Clock& obj) : mainTimer(obj) {}
 
 	void operator() ();
 
 private:
-	Timer& mainTimer;
+	Clock& mainTimer;
 };

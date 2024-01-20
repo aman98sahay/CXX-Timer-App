@@ -8,7 +8,7 @@ InternalClock :: operator() ()
 {
 	while (!mainTimer.isTimeUp()) 
 	{
-		Sleep(1);
+		Sleep(1000);
 		mainTimer.ASecondHasPassed();
 	}
 }

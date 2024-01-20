@@ -2,28 +2,27 @@
 #include <InternalClock.hpp>
 #include <thread>
 #include <assert.h>
-volatile long secondsLeft;
-volatile long waitInSeconds;
 
-Timer::Timer(long timeInSeconds) 	
+
+Clock::Clock(long timeInSeconds) 	
 {
 	secondsLeft = waitInSeconds = timeInSeconds;
 }
 
 float
-Timer::fractionCompleted()
+Clock::fractionCompleted()
 {
 	return float(waitInSeconds - secondsLeft) / waitInSeconds;
 }
 
 long
-Timer::getSecondsLeft()
+Clock::getSecondsLeft()
 {
 	return secondsLeft;
 }
 
 void 
-Timer::startTimer() 
+Clock::startTimer() 
 {
 	InternalClock internal_clock(*this);
 	std::thread t(internal_clock);
@@ -32,13 +31,13 @@ Timer::startTimer()
 }
 
 bool 
-Timer::isTimeUp()
+Clock::isTimeUp()
 {
 	return secondsLeft <= 0 ? true : false;
 }
 
 void 
-Timer::ASecondHasPassed() 
+Clock::ASecondHasPassed() 
 {
 	assert(secondsLeft >= 0);
 

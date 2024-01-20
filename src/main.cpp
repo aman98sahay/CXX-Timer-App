@@ -6,11 +6,17 @@ using namespace std;
 int 
 main()
 {
-	Timer t(5 * 60);
+	int sec;
+	cout << "Enter the number of Seconds you want the timer to run for :";
+	cin >> sec;
+
+
+	Clock t( sec);
 
 	t.startTimer();
 
 	while (!t.isTimeUp()) {
-		cout << t.getSecondsLeft() << "min left\n";
+		system("cls");
+		cout << t.getSecondsLeft() << "s left\n";
 	}
 }

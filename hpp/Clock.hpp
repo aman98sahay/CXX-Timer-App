@@ -1,9 +1,9 @@
 #pragma once 
 
-class Timer {
+class Clock {
 public:
 	
-	Timer(long timeInSeconds);
+	Clock(long timeInSeconds);
 
 	float fractionCompleted();
 
@@ -18,6 +18,7 @@ private:
 	friend class InternalClock;
 
 	void ASecondHasPassed();
-
+	long secondsLeft;
+	long waitInSeconds;
 	
 };
