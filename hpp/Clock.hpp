@@ -20,7 +20,7 @@ private:
 	friend class InternalClock;
 
 	void ASecondHasPassed();
-	long secondsLeft;
+	volatile long secondsLeft;
 	long waitInSeconds;
 	
 };
