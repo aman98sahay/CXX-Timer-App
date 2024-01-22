@@ -12,7 +12,9 @@ public:
 	void startTimer();
 
 	bool isTimeUp();
+	
 
+	void TakeCurrentThreadAndPrintOnScreen();
 
 private:
 	friend class InternalClock;

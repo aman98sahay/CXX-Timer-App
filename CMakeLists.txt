@@ -8,6 +8,6 @@ add_executable(timer
 	src/main.cpp
    "src/Clock.cpp"
 	src/InternalClock.cpp
-)
+ "src/Printer.cpp")
 
 target_include_directories(timer PUBLIC ${CMAKE_SOURCE_DIR}/hpp)
